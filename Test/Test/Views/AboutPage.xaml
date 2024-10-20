@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test.Views.AboutPage"
+             xmlns:vm="clr-namespace:Test.ViewModels"
+             xmlns:resx="clr-namespace:Test.Resx"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView Margin="10,10,10,20">
+        <Grid>
+            <Grid x:Name="gContent" BindingContext="{Binding .}" IsVisible="false">
+
+            </Grid>
+            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                <Button x:Name="button" Text="Button" WidthRequest="100" HeightRequest="50">
+                </Button>
+            </Grid>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
